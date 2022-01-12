@@ -4,6 +4,7 @@
     "es_connect_string": "http://localhost:9200",
     "query_size": 50,
     "cutoff_exact_match": "0.95",
+    "null_value": "99",
     "datasets_info": {
                         "indexed_dataset": {
                                             "path": "../0_global_data/fd-cidacs-rl/sinthetic-dataset-A.parquet",
@@ -30,7 +31,7 @@
                                     "is_fuzzy": "true",
                                     "boost": "3.0",
                                     "query_type": "match",
-                                    "similarity": "jaro_wikler",
+                                    "similarity": "jaro_winkler",
                                     "weight": 1.0,
                                     "penalty": 0.02
                         },
@@ -42,7 +43,7 @@
                                     "is_fuzzy": "true",
                                     "boost": "2.0",
                                     "query_type": "match",
-                                    "similarity": "jaro_wikler",
+                                    "similarity": "jaro_winkler",
                                     "weight": 1.0,
                                     "penalty": 0.02
                         },
