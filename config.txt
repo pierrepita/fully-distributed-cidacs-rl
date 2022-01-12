@@ -5,6 +5,7 @@
     "query_size": 50,
     "cutoff_exact_match": "0.95",
     "null_value": "99",
+    "temp_dir": "../0_global_data/fd-cidacs-rl/temp_dataframe/",
     "datasets_info": {
                         "indexed_dataset": {
                                             "path": "../0_global_data/fd-cidacs-rl/sinthetic-dataset-A.parquet",
