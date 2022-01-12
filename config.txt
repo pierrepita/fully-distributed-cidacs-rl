@@ -1,0 +1,74 @@
+{
+    "index_data": "yes",
+    "es_index_name": "fd-cidacs-rl",
+    "es_connect_string": "http://localhost:9200",
+    "query_size": 50,
+    "cutoff_exact_match": "0.95",
+    "datasets_info": {
+                        "indexed_dataset": {
+                                            "path": "../0_global_data/fd-cidacs-rl/sinthetic-dataset-A.parquet",
+                                            "extension": "parquet",
+                                            "columns": ["id_cidacs_a", "nome_a", "nome_mae_a", "dt_nasc_a", "sexo_a"],
+                                            "id_column_name": "id_cidacs_a"
+                        },
+                        "tolink_dataset": {
+                                            "path": "../0_global_data/fd-cidacs-rl/sinthetic-datasets-b/sinthetic-datasets-b-1000.parquet",
+                                            "extension": "parquet",
+                                            "columns": ["id_cidacs_b", "nome_b", "nome_mae_b", "dt_nasc_b", "sexo_b"],
+                                            "id_column_name": "id_cidacs_b"
+                        },
+                        "result_dataset": {
+                                            "path": "../0_global_data/result/"
+                        }                        
+                     },
+    "comparisons": {
+                        "name": {
+                                    "indexed_col": "nome_a",
+                                    "tolink_col": "nome_b",
+                                    "must_match": "true",
+                                    "should_match": "true",
+                                    "is_fuzzy": "true",
+                                    "boost": "3.0",
+                                    "query_type": "match",
+                                    "similarity": "jaro_wikler",
+                                    "weight": 1.0,
+                                    "penalty": 0.02
+                        },
+                        "mothers_name": {
+                                    "indexed_col": "nome_mae_a",
+                                    "tolink_col": "nome_mae_b",
+                                    "must_match": "true",
+                                    "should_match": "true",
+                                    "is_fuzzy": "true",
+                                    "boost": "2.0",
+                                    "query_type": "match",
+                                    "similarity": "jaro_wikler",
+                                    "weight": 1.0,
+                                    "penalty": 0.02
+                        },
+                        "birthdate": {
+                                    "indexed_col": "dt_nasc_a",
+                                    "tolink_col": "dt_nasc_b",
+                                    "must_match": "false",
+                                    "should_match": "true",
+                                    "is_fuzzy": "false",
+                                    "boost": "",
+                                    "query_type": "term",
+                                    "similarity": "hamming",
+                                    "weight": 1.0,
+                                    "penalty": 0.02
+                        },
+                        "sex": {
+                                    "indexed_col": "sexo_a",
+                                    "tolink_col": "sexo_b",
+                                    "must_match": "true",
+                                    "should_match": "true",
+                                    "is_fuzzy": "false",
+                                    "boost": "",
+                                    "query_type": "term",
+                                    "similarity": "overlap",
+                                    "weight": 1.0,
+                                    "penalty": 0.02
+                                  }
+                    }
+}
