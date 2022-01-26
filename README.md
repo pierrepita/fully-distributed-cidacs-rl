@@ -42,8 +42,9 @@ temp_dir:"/path/to/temp_dir/"
 debug:"false"
 </code></pre>
 
+<hr />
 ### Information on involved datasets
-
+<hr />
 
 #### datasets_info
 ##### indexed_dataset
