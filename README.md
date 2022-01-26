@@ -8,16 +8,48 @@ The CIDACS-RL is a brazillian record linkage tool suitable to integrate large am
 ### General info
 
 #### index_data
-This flag says if the linkage process includes the indexing of a data set into elastic search. It can assume the values "yes" or "no". 
+This flag says if the linkage process includes the indexing of a data set into elastic search. Constraints: string, it can assume the values "yes" or "no". 
+
+#### es_index_name
+The name of an existing elasticsearch index (if index_data is 'no') or a new one (if index_data is 'yes'). Constraints: string, elasticsearch valid. 
+
+#### es_connect_string
+Elasticsearch API address. Constraints: string, URL format.
+
+#### query_size
+Number of candidates output for each Elasticsearch query. Constraints: int.
+
+#### cutoff_exact_match
+Cutoff point to determine wether a pair is an exact match or not. Constraints: str, number between 0 and 1.
+
+#### null_value
+Value to replace missings on both data sets involved. Constraints: string.
+
+#### temp_dir
+Directory used to write checkpoints for exact match and non-exact match phases. Constraints: string, fully qualified path. 
+
+#### debug
+If it is set as "true", all records found on exact match will be queried again on non-exact match phase. 
+
 <pre><code>
 index_data:"no"
-</code></pre>
-
-
 es_index_name:"fd-cidacs-rl"
 es_connect_string:"http://localhost:9200"
 query_size:100
 cutoff_exact_match:"0.95"
 null_value:"99"
-temp_dir:"../../../0_global_data/fd-cidacs-rl/temp_dataframe/"
+temp_dir:"/path/to/temp_dir/"
 debug:"false"
+</code></pre>
+
+### Information on involved datasets
+
+
+#### datasets_info
+##### indexed_dataset
+
+
+
+
+
+
