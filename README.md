@@ -159,7 +159,12 @@ If you are running into a Spark Cluster under JupyterHUB kernels, try to add thi
 </code></pre>
 
  
+# Some advices for indexed data and queries
 
-
-
+<ul>
+  <li>Every col should be casted as string (df.withColumn('column', F.col('column').cast(string')))</li>
+  <li>Date type columns will not be proper indexed as string, except if some preprocessing step tranform it from yyyy-MM-dd to yyyyMMdd.</li>
+  <li>All the nodes of elasticsearch cluster must be included on --packages configuration.</li>
+  <li>Term queries are good to well structured variables, such as CPF, dates, CNPJ, etc.</li>
+</ul>
 
