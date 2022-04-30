@@ -132,7 +132,7 @@ Read more: https://github.com/elastic/elasticsearch-hadoop
  If you intend to run this tool into a single node Spark environment, consider to include this in you spark-submit or spark-shell command line
 
 <pre><code>
-pyspark --packages org.elasticsearch:elasticsearch-spark-30_2.12:7.14.0 --conf spark.es.nodes="localhost" --conf spark.es.port="9200"
+pyspark --packages org.elasticsearch:elasticsearch-spark-30_2.12:8.1.3 --conf spark.es.nodes="localhost" --conf spark.es.port="9200"
 </code></pre>
  
 If you are running into a Spark Cluster under JupyterHUB kernels, try to add this kernel or edit an existing one: 
@@ -153,7 +153,7 @@ If you are running into a Spark Cluster under JupyterHUB kernels, try to add thi
 					   "PYTHONPATH": "/opt/bigdata/spark/python:/opt/bigdata/spark/python/lib/py4j-0.10.9.2-src.zip",
 					     "PYTHONSTARTUP": "/opt/bigdata/spark/python/pyspark/python/pyspark/shell.py",
 					       "PYSPARK_PYTHON": "/opt/bigdata/anaconda3/bin/python",
-					         "PYSPARK_SUBMIT_ARGS": "--master spark://node1.sparkcluster:7077 --packages org.elasticsearch:elasticsearch-spark-30_2.12:7.14.0 --conf spark.es.nodes=['node1','node2'] --conf spark.es.port='9200' pyspark-shell"
+					         "PYSPARK_SUBMIT_ARGS": "--master spark://node1.sparkcluster:7077 --packages org.elasticsearch:elasticsearch-spark-30_2.12:8.1.3 --conf spark.es.nodes=['node1','node2'] --conf spark.es.port='9200' pyspark-shell"
 						  }
 }
 </code></pre>
