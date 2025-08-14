@@ -5,12 +5,12 @@
     "query_size": 50,
     "cutoff_exact_match": "0.95",
     "null_value": "99",
-    "temp_dir": "../temp_dataframe/",
+    "temp_dir": "hdfs://barravento:9000/data/temp_dataframe/",
     "debug": "false",
     "write_checkpoint": "false",
     "datasets_info": {
                         "indexed_dataset": {
-                                            "path": "../data/sinthetic-dataset-A.parquet",
+                                            "path": "hdfs://barravento:9000/data/synthetic-dataset-A.parquet",
                                             "extension": "parquet",
                                             "columns": ["id_cidacs_a", "nome_a", "nome_mae_a", "dt_nasc_a", "sexo_a"],
                                             "id_column_name": "id_cidacs_a", 
@@ -18,7 +18,7 @@
                                             "default_paralelism": "16"
                         },
                         "tolink_dataset": {
-                                            "path": "../data/sinthetic-datasets-b-1000.parquet",
+                                            "path": "hdfs://barravento:9000/data/synthetic-datasets-b-1000.parquet",
                                             "extension": "parquet",
                                             "columns": ["id_cidacs_b", "nome_b", "nome_mae_b", "dt_nasc_b", "sexo_b"],
                                             "id_column_name": "id_cidacs_b",
@@ -26,7 +26,7 @@
                                             "default_paralelism": "16"
                         },
                         "result_dataset": {
-                                            "path": "../result/"
+                                            "path": "hdfs://barravento:9000/data/result/"
                         }                        
                      },
     "comparisons": {
