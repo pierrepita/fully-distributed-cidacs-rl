@@ -3,6 +3,7 @@
     "es_index_name": "fd-cidacs-rl",
     "es_connect_string": "http://localhost:9200",
     "query_size": 50,
+    "es_major_version": "7",
     "cutoff_exact_match": "0.95",
     "null_value": "99",
     "temp_dir": "hdfs://barravento:9000/data/temp_dataframe/",
